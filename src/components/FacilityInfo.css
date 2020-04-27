@@ -1,0 +1,23 @@
+.facilities_info {
+    padding: 0.5em 1em;
+    margin: auto;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    height: 30;
+    width: 50%;
+    align-items: center;
+    justify-content: center 
+}
+
+.facility_name {
+    text-align: left;
+    font-style: normal;
+    width: 30;
+    height: 10;
+}
+
+.facility_info {
+    text-align: left;
+}
