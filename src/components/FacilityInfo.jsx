@@ -5,6 +5,7 @@ import Facilities from './Facililities';
 import { withRouter,Router } from 'react-router-dom';
 import * as actions from '../action/Facilities';
 import {connect} from 'react-redux';
+import FacilitiesRouter from './FacilitiesRouter'
 
 
 class FacilityInfo extends React.Component {
@@ -55,13 +56,6 @@ class FacilityInfo extends React.Component {
   })
   }
 
-  handleClick(e) {
-    this.props.history.push({
-      pathname: ' /facilityDetail',
-      state: { facility: e }
-  });
-  }
-
   render() {
 
     return (
@@ -70,7 +64,7 @@ class FacilityInfo extends React.Component {
           <input type="text" placeholder="search" onChange={this.handleChange} onKeyDown={this.handleChange} />
           <input type="button" value="検索" onClick={this.searchFacilities.bind(this)}/>
           <input type="button" value="全件" onClick={this.displayAll}/>
-        <Facilities facilities={this.state.displayedFacilities}  goToDetail={(e)=>this.handleClick(e)}/> 
+        <Facilities facilities={this.state.displayedFacilities} /> 
       </>
     );
   }
