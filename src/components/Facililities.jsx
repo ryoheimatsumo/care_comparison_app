@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 
 function Facilities (props) {
@@ -28,4 +27,4 @@ function Facilities (props) {
     )
 }
 
-export default Facilities
+export default Facilities;

@@ -2,10 +2,9 @@ import React from 'react';
 import './FacilityInfo.css'
 import './Facililities'
 import Facilities from './Facililities';
-import { withRouter,Router } from 'react-router-dom';
 import * as actions from '../action/Facilities';
 import {connect} from 'react-redux';
-import FacilitiesRouter from './FacilitiesRouter'
+
 
 
 class FacilityInfo extends React.Component {
@@ -56,6 +55,8 @@ class FacilityInfo extends React.Component {
   })
   }
 
+  
+
   render() {
 
     return (
@@ -84,5 +85,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FacilityInfo);
-
-

@@ -1,17 +1,51 @@
 import React from 'react';
 import * as actions from '../action/Facilities';
 import {connect} from 'react-redux';
+import CommentForm from './CommentForm'
+import Comments from './Comments';
 
-
-class FacilityInfo extends React.Component {
+class FacilityDetail extends React.Component {
   
   constructor(props) {
     super(props);
     this.state = {
         allFacilities:this.props.state.facilities,
+        title:"",
+        userName:"",
+        review:"",
+        comments:[]
     };
   }
   
+  handleTitleChange =
+  (e) => {
+    this.setState({ title: e.target.value });
+  }
+
+  handleNameChange =
+  (e) => {
+    this.setState({ userName: e.target.value });
+  }
+
+  handleReviewChange =
+  (e) => {
+    this.setState({ review: e.target.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const comments = this.state.comments;
+    const newComment = {title:this.state.title, userName:this.state.userName, review:this.state.review};
+    comments.push(newComment);
+    
+    this.setState({
+      comments:comments,
+      title:"",
+      userName:"",
+      review:""
+    })
+
+  }
 
 
   render() {
@@ -37,6 +71,9 @@ class FacilityInfo extends React.Component {
                 </tr>
               </table>
            </div>
+           <CommentForm title={this.state.title} name={this.state.userName} review={this.state.review} handleTitleChange={this.handleTitleChange}
+           handleNameChange={this.handleNameChange} handleReviewChange={this.handleReviewChange} handleSubmit={this.handleSubmit.bind(this)} />
+           <Comments comments={this.state.comments}/>
       </div>
       </>
     );
@@ -56,4 +93,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FacilityInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(FacilityDetail);

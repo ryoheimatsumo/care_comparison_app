@@ -1,7 +1,6 @@
 import React from 'react';
 import FacilityInfo from './FacilityInfo';
-import { BrowserRouter, Route, Switch, Redirect,Router } from 'react-router-dom';
-
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import FacilityDetail from './FacilityDetail';
 
 
